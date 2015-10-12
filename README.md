@@ -38,4 +38,3 @@ function isPrime(n) {
 ```
 Than call ```console.log(isPrime(n));```
 This returns a TRUE or FALSE 
-
