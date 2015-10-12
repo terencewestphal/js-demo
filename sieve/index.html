@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>JS Demo's: Sieve of Eratosthenes</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <style>
+    #N {margin: 5px;}
+    #primes { margin: 5px; }
+    </style>
+  </head>
+  <body>
+    <h1>Sieve of Eratosthenes</h1>
+    <input id="N" type="text" size="10" value="1000" />&nbsp;
+    <input id="go" type="button" value="Go" />
+    <div id="primes">
+      <p>This returns all prime numbers up to this limit.</p>
+    </div>
+    
+    <script>
+    // Sieve of Eratosthenes
+    function sieve(N) {
+      var n, p, primes = [], str = [];
+      for (n = 2; n < N / 2; n++) {
+        if (primes[n]) { continue; }
+        for (p = 2 * n; p <= N; p += n) { primes[p] = true; }
+      }
+      for (n = 2; n <= N; n++) { if (!primes[n]) str.push(n); }
+      return str.join(', ');
+    }
+
+    onload = function() {
+      var N = document.getElementById('N');
+      var go = document.getElementById('go');
+      var container = document.getElementById('primes');
+      go.onclick = function(){
+        container.innerHTML = "working ...";
+        setTimeout(function(){ container.innerHTML = sieve(N.value); }, 10);
+      }
+    };
+    </script>
+  </body>
+</html>
