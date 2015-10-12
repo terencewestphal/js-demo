@@ -14,7 +14,6 @@ Read more on [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
 
 ![img](/sieve/Sieve_of_Eratosthenes_animation.gif)  
 
-
 ```js
 // The Sieve of Eratosthenes in JavaScript
 function sieve(N) {
@@ -27,3 +26,16 @@ function sieve(N) {
   return str.join(', ');
 }
 ```
+*There are many versions of sieve on the web, this is my personal favorite*
+
+##isPrime  
+Sometimes you just want to know if a number is a prime number or not. You can do that with a regular expression.
+
+```js
+function isPrime(n) {
+  return !(Array(n + 1).join(1).match(/^1?$|^(11+?)\1+$/));
+}
+```
+Than call ```console.log(isPrime(n));```
+This returns a TRUE or FALSE 
+
