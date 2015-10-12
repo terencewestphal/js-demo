@@ -12,8 +12,11 @@ Read more on [Wikipedia](https://en.wikipedia.org/wiki/Sieve_of_Eratosthenes).
 > 
 > -Anonymous-  
 
+![img](/sieve/Sieve_of_Eratosthenes_animation.gif)  
+
+
 ```js
-// Sieve of Eratosthenes
+// The Sieve of Eratosthenes in JavaScript
 function sieve(N) {
   var n, p, primes = [], str = [];
   for (n = 2; n < N / 2; n++) {
@@ -24,5 +27,3 @@ function sieve(N) {
   return str.join(', ');
 }
 ```
-
-![img](/sieve/Sieve_of_Eratosthenes_animation.gif)  
