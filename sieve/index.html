@@ -15,6 +15,7 @@
     <input id="go" type="button" value="Go" />
     <div id="primes">
       <p>This returns all prime numbers up to this limit.</p>
+      <p>Setting the upper limit too high can result in a browser crash. Try to keep it under 10 million.</p>
     </div>
     
     <script>
@@ -34,7 +35,7 @@
       var go = document.getElementById('go');
       var container = document.getElementById('primes');
       go.onclick = function(){
-        container.innerHTML = "working ...";
+        container.innerHTML = "Number Cruncing ...";
         setTimeout(function(){ container.innerHTML = sieve(N.value); }, 10);
       }
     };
